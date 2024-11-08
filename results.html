@@ -40,11 +40,32 @@
         <script>
 
             const queryString = window.location.search;
-
+            const urlParams = new URLSearchParams(queryString);
+            
             var myhtml = '<div id="main_container">';
-            myhtml = myhtml + '<div class="topnav_outer"><div class="topnav"><span class="myelement">WEB-CLIENTE-3</span></div></div>';
+            myhtml = myhtml + '<div class="topnav_outer"><div class="topnav"><span class="myelement">WEB-CLIENTE-4</span></div></div>';
             myhtml = myhtml + '<br><br><br><br><span class="span-custom">RESULTADOS</span>';
-            myhtml = myhtml + '<br><br><span class="span-custom">' + queryString + '</span>';
+            if (urlParams.has('output1')){
+                const requestCode = urlParams.get('output1');
+                myhtml = myhtml + '<br><br><span class="span-custom">Request-code: ' + requestCode + '</span>';
+            }
+            if (urlParams.has('output2')){
+                const recommendCode = urlParams.get('output2');
+                myhtml = myhtml + '<br><br><span class="span-custom">Recommend-code: ' + recommendCode + '</span>';
+            }
+            if (urlParams.has('output3')){
+                const sizeFoot = urlParams.get('output3');
+                myhtml = myhtml + '<br><br><span class="span-custom">' + sizeFoot + '</span>';
+            }
+            if (urlParams.has('output4')){
+                const productCode = urlParams.get('output4');
+                myhtml = myhtml + '<br><br><span class="span-custom">Product-code: ' + productCode + '</span>';
+            }
+            if (urlParams.has('output5')){
+                const codeUser = urlParams.get('output5');
+                myhtml = myhtml + '<br><br><span class="span-custom">User-code: ' + codeUser + '</span>';
+            }
+
             myhtml = myhtml + '</div>';
             document.body.innerHTML = myhtml;
 
