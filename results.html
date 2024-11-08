@@ -39,10 +39,12 @@
     <body>
         <script>
 
+            const queryString = window.location.search;
+
             var myhtml = '<div id="main_container">';
-            myhtml = myhtml + '<div class="topnav_outer"><div class="topnav"><span class="myelement">WEB-CLIENTE-2</span></div></div>';
+            myhtml = myhtml + '<div class="topnav_outer"><div class="topnav"><span class="myelement">WEB-CLIENTE-3</span></div></div>';
             myhtml = myhtml + '<br><br><br><br><span class="span-custom">RESULTADOS</span>';
-            myhtml = myhtml + '<br><br><span class="span-custom">HOLA</span>';
+            myhtml = myhtml + '<br><br><span class="span-custom">' + queryString + '</span>';
             myhtml = myhtml + '</div>';
             document.body.innerHTML = myhtml;
 
